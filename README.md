@@ -80,17 +80,17 @@ Hyperparameters are configurable, including:
 
 | Parameter           | Value                            | Description                                         |
 | ------------------- | -------------------------------- | --------------------------------------------------- |
-| `n_embed`           | 192                              | Embedding dimension size                           |
+| `n_embed`           | 512                              | Embedding dimension size                           |
 | `num_heads`         | 8                                | Number of attention heads                          |
 | `num_layer`         | 6                                | Number of Transformer encoder/decoder layers       |
 | `dropout`           | 0.2                              | Dropout rate for regularization                    |
-| `max_seq_len`       | 48                               | Maximum sequence length supported                  |
+| `max_seq_len`       | 256                              | Maximum sequence length supported                  |
 | `device`            | `'cuda' if available else 'cpu'` | Device used for training (GPU or CPU)              |
 | `num_epochs`        | 10                               | Total number of training epochs                    |
 | `patience`          | 3                                | Early stopping patience based on validation loss   |
 | `print_every`       | 100                              | Logging frequency (steps)                          |
 | `accumulation_steps`| 4                                | Steps to accumulate gradients before update        |
-| `lr`                | `3e-4 * accumulation_steps`       | Scaled learning rate with accumulation             |
+| `lr`                | `3e-4 * accumulation_steps`      | Scaled learning rate with accumulation             |
 
 
 ---
