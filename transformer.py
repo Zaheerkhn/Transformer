@@ -16,8 +16,8 @@ torch.manual_seed(1337)
 num_heads = 8 
 num_layer = 6
 dropout = 0.2
-n_embed = 192
-max_seq_len = 48
+n_embed = 512
+max_seq_len = 256
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 num_epochs = 10  # Increased epochs
 patience = 3      # For early stopping
@@ -39,7 +39,7 @@ def load_sentence_pairs(path, num_examples=None):
         pairs = pairs[:num_examples]
     return pairs
 
-pairs = load_sentence_pairs("transformer/deu.txt", num_examples=5000)  # Toy size
+pairs = load_sentence_pairs("transformer/deu.txt", num_examples=50000)  # Toy size
 
 def tokenize(text):
     text = text.lower()
@@ -96,8 +96,8 @@ dataset = TranslationDataset(pairs, src_stoi, tgt_stoi)
 train_size = int(0.9 * len(dataset))
 valid_size = len(dataset) - train_size
 train_dataset, valid_dataset = random_split(dataset, [train_size, valid_size])
-train_dataloader = DataLoader(train_dataset, batch_size=32, shuffle=True)
-valid_dataloader = DataLoader(valid_dataset, batch_size=32, shuffle=False)
+train_dataloader = DataLoader(train_dataset, batch_size=128, shuffle=True)
+valid_dataloader = DataLoader(valid_dataset, batch_size=128, shuffle=False)
 
 
 
