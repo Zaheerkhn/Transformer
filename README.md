@@ -48,7 +48,8 @@ Unlike toy examples, this version is **training-ready**, equipped with advanced 
 ```
 project/
 │
-├── transformer.py               # Transformer model with encoder, decoder, attention, FFN        
+├── transformer.py               # Transformer model with encoder, decoder, attention, FFN
+├── deu-eng                      # Extract the dataset and use that deu.txt for training
 ├── requirements.txt
 └── README.md
 ```
